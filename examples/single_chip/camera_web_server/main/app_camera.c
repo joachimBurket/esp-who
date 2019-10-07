@@ -64,11 +64,26 @@ void app_camera_main ()
     config.pin_pwdn = PWDN_GPIO_NUM;
     config.pin_reset = RESET_GPIO_NUM;
     config.xclk_freq_hz = 20000000;
-    config.pixel_format = PIXFORMAT_JPEG;
+    config.pixel_format = PIXFORMAT_GRAYSCALE;
     //init with high specs to pre-allocate larger buffers
-    config.frame_size = FRAMESIZE_UXGA;
+    config.frame_size = FRAMESIZE_QVGA;
     config.jpeg_quality = 10;
     config.fb_count = 2;
+
+    // debug print of the camera pins 
+    ESP_LOGI(TAG, "Camera pins:\n");
+    ESP_LOGI(TAG, "d0:%d", Y2_GPIO_NUM);
+    ESP_LOGI(TAG, "d1:%d", Y3_GPIO_NUM);
+    ESP_LOGI(TAG, "d2:%d", Y4_GPIO_NUM);
+    ESP_LOGI(TAG, "d3:%d", Y5_GPIO_NUM);
+    ESP_LOGI(TAG, "d4:%d", Y6_GPIO_NUM);
+    ESP_LOGI(TAG, "d5:%d", Y7_GPIO_NUM);
+    ESP_LOGI(TAG, "d6:%d", Y8_GPIO_NUM);
+    ESP_LOGI(TAG, "d7:%d", Y9_GPIO_NUM);
+    ESP_LOGI(TAG, "xclk:%d", XCLK_GPIO_NUM);
+    ESP_LOGI(TAG, "pclk:%d", PCLK_GPIO_NUM);
+    ESP_LOGI(TAG, "sda:%d", SIOD_GPIO_NUM);
+
 
     // camera init
     esp_err_t err = esp_camera_init(&config);
