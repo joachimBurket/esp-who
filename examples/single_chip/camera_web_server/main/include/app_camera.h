@@ -24,9 +24,9 @@
 #ifndef _APP_CAMERA_H_
 #define _APP_CAMERA_H_
 
-//#define CONFIG_CAMERA_MODEL_WROVER_CUSTOM 1
+#define CONFIG_CAMERA_MODEL_WROVER_CUSTOM 1
 //#define CONFIG_CAMERA_MODEL_ESP_EYE 1
-#define CONFIG_CAMERA_MODEL_WROVER_KIT 1
+//#define CONFIG_CAMERA_MODEL_WROVER_KIT 1
 
 
 
@@ -148,22 +148,22 @@
 
 #elif CONFIG_CAMERA_MODEL_WROVER_CUSTOM
 #define PWDN_GPIO_NUM    -1
-#define RESET_GPIO_NUM   -1
-#define XCLK_GPIO_NUM    21//5
-#define SIOD_GPIO_NUM    26//18
-#define SIOC_GPIO_NUM    27//23
+#define RESET_GPIO_NUM   4
+#define XCLK_GPIO_NUM    2//21
+#define SIOD_GPIO_NUM    18//26
+#define SIOC_GPIO_NUM    23//27
 
 #define Y9_GPIO_NUM      36
 #define Y8_GPIO_NUM      14
 #define Y7_GPIO_NUM      35
 #define Y6_GPIO_NUM      34
-#define Y5_GPIO_NUM      39//27
-#define Y4_GPIO_NUM      18//26
+#define Y5_GPIO_NUM      27//39
+#define Y4_GPIO_NUM      26//18
 #define Y3_GPIO_NUM      12
 #define Y2_GPIO_NUM      13
-#define VSYNC_GPIO_NUM   25//15
-#define HREF_GPIO_NUM    23//39
-#define PCLK_GPIO_NUM    22//25
+#define VSYNC_GPIO_NUM   15//25
+#define HREF_GPIO_NUM    39//23
+#define PCLK_GPIO_NUM    25//22
 
 #endif
 

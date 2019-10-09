@@ -29,7 +29,6 @@ static const char *TAG = "app_camera";
 
 void app_camera_main ()
 {
-#if CONFIG_CAMERA_MODEL_ESP_EYE
     /* IO13, IO14 is designed for JTAG by default,
      * to use it as generalized input,
      * firstly declair it as pullup input */
@@ -42,7 +41,7 @@ void app_camera_main ()
     gpio_config(&conf);
     conf.pin_bit_mask = 1LL << 14;
     gpio_config(&conf);
-#endif
+
 
     camera_config_t config;
     config.ledc_channel = LEDC_CHANNEL_0;
@@ -63,7 +62,7 @@ void app_camera_main ()
     config.pin_sscb_scl = SIOC_GPIO_NUM;
     config.pin_pwdn = PWDN_GPIO_NUM;
     config.pin_reset = RESET_GPIO_NUM;
-    config.xclk_freq_hz = 20000000;
+    config.xclk_freq_hz = 10000000;
     config.pixel_format = PIXFORMAT_GRAYSCALE;
     //init with high specs to pre-allocate larger buffers
     config.frame_size = FRAMESIZE_QVGA;
